@@ -1,0 +1,61 @@
+//mixin
+@mixin hoverBtnEffect {
+  &:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
+    &::after{
+      transform: scaleX(1.4);
+      opacity: 0;
+    }
+  }
+}
+
+.button{
+  padding: $spacing-md;
+  border-radius: $radius-lg;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: none;
+  transition: all .2s;
+  position: relative;
+
+  &::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: $radius-lg;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
+
+@include hoverBtnEffect;
+
+//click
+  &:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+}
+
+.darkButton{
+  background-color: $light-primary;
+  color: $color-text-dark;
+
+  &::after{
+    background-color: $light-primary;
+  }
+}
+
+.lightButton{
+  background-color: $color-bg-light;
+  color: $color-text-light;
+
+  &::after{
+    background-color: $color-bg-light;
+  }
+}

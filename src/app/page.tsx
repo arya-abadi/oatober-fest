@@ -1,10 +1,10 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Header from "@/components/Header/Header";
+import PageContainer from "@/components/General/PageContainer/PageContainer";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      New page
-    </div>
+    <PageContainer>
+        <Header/>
+    </PageContainer>
   );
 }

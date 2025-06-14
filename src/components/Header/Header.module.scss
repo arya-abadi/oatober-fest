@@ -1,0 +1,73 @@
+@mixin heading-text-style ($letterSpacing: 1.5){
+  font-size: $font-size-2xl;
+  font-weight: 400;
+  letter-spacing: $letterSpacing;
+}
+
+.header {
+  height: 95vh;
+  position: relative;
+  background-image: linear-gradient(
+                  to right bottom,
+                  rgba($light-primary, 0.8),
+                  rgba($dark-primary, 0.8)
+  ),
+  url("../../assets/images/heroBg.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+
+  .logoBox {
+    position: absolute;
+    top: $spacing-lg;
+    left: $spacing-lg;
+
+    .logo {
+      height: 35px;
+    }
+  }
+
+  .headingBox {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-xl;
+
+
+    .textbox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $color-text-dark;
+      text-transform: uppercase;
+
+      backface-visibility: hidden;
+
+      .headingPrimary {
+        @include heading-text-style(35px);
+
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        //animation-delay: 2s;
+        //animation-iteration-count: infinite;
+      }
+
+      .headingPrimarySub {
+        font-size: $font-size-lg;
+        font-weight: 700;
+        letter-spacing: 7.5px;
+
+        animation: moveInRight 1s ease-out;
+      }
+    }
+
+    .btnAnimation{
+      animation: moveInButton 1s ease-out;
+    }
+  }
+}
