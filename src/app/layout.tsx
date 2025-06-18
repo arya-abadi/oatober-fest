@@ -3,6 +3,7 @@ import "../styles/globals.scss";
 import {Lato} from 'next/font/google';
 import {storyblokInit, apiPlugin} from "@storyblok/react/rsc";
 import StoryblokProvider from "@/components/StoryblokProvider/StoryblokProvider";
+import QueryProvider from "@/components/QueryProvider/QueryProvider";
 
 const lato = Lato({
     subsets: ['latin'],
@@ -26,10 +27,11 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         <StoryblokProvider>
             <html lang="en" className={lato.variable}>
             <body className={lato.className}>
-            {children}
+            <QueryProvider>
+                {children}
+            </QueryProvider>
             </body>
             </html>
         </StoryblokProvider>
     );
 }
-

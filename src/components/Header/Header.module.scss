@@ -1,4 +1,4 @@
-@mixin heading-text-style ($letterSpacing: 1.5){
+@mixin heading-text-style($letterSpacing: 1.5) {
   font-size: $font-size-2xl;
   font-weight: 400;
   letter-spacing: $letterSpacing;
@@ -66,7 +66,7 @@
       }
     }
 
-    .btnAnimation{
+    .btnAnimation {
       animation: moveInButton 1s ease-out;
     }
   }
