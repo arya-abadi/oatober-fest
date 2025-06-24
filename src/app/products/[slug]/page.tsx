@@ -1,13 +1,5 @@
-import { getStoryblokApi } from "@storyblok/react/rsc";
 import { StoryblokStory } from "@/storyblok/storyblokSetup";
-
-const fetchProductPage = async (slug: string) => {
-    const client = getStoryblokApi();
-    const response = await client.get(`cdn/stories/products/${slug}`, {
-        version: "draft",
-    });
-    return response.data.story;
-}
+import {fetchProductPage} from "@/utils/fetchProductPage";
 
 const ProductPage = async (props: any) => {
     const params = await props.params;
