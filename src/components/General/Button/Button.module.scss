@@ -1,26 +1,25 @@
-//mixin
 @mixin hoverBtnEffect {
-  &:hover{
+  &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
-    &::after{
+    &::after {
       transform: scaleX(1.4);
       opacity: 0;
     }
   }
 }
 
-.button{
+.button {
   padding: $spacing-md;
   border-radius: $radius-lg;
   cursor: pointer;
   text-transform: uppercase;
   border: none;
-  transition: all .2s;
+  transition: all 0.2s;
   position: relative;
 
-  &::after{
+  &::after {
     content: "";
     display: inline-block;
     height: 100%;
@@ -30,32 +29,48 @@
     top: 0;
     left: 0;
     z-index: -1;
-    transition: all .4s;
+    transition: all 0.4s;
   }
 
-@include hoverBtnEffect;
+  @include hoverBtnEffect;
 
-//click
-  &:active{
+  &:active {
     transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
 }
 
-.darkButton{
+.button--dark {
   background-color: $light-primary;
   color: $color-text-dark;
 
-  &::after{
+  &::after {
     background-color: $light-primary;
   }
 }
 
-.lightButton{
+.button--light {
   background-color: $color-bg-light;
   color: $color-text-light;
 
-  &::after{
+  &::after {
     background-color: $color-bg-light;
+  }
+}
+
+.button--loading {
+  background-color: grey;
+  color: $color-gray;
+  pointer-events: none;
+
+  &:hover,
+  &:active {
+    transform: none;
+    box-shadow: none;
+
+    &::after {
+      transform: none;
+      opacity: 1;
+    }
   }
 }
