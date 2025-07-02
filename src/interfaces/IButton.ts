@@ -5,4 +5,5 @@ export interface IButton {
     color?: "dark" | "light";
     className?: string;
     children: React.ReactNode;
+    isLoading: boolean;
 }
