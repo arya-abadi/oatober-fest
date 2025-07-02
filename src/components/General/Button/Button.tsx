@@ -13,6 +13,8 @@ const Button: React.FC<IButton> = ({
         color === "light" ? styles["button--light"] : styles["button--dark"];
     const loadingClass = isLoading ? styles["button--loading"] : "";
 
+    console.log("here");
+
     return (
         <button
             className={`${styles.button} ${colorClass} ${loadingClass} ${className}`}

@@ -3,7 +3,7 @@ import {Meta, StoryObj} from "@storybook/nextjs";
 
 
 const meta: Meta<typeof Button> = {
-    title: "components/Buttons/default",
+    title: "components/Buttons/loadingButton",
     component: Button,
     argTypes: {
         onClick: { action: "clicked" },
@@ -15,12 +15,9 @@ type Story = StoryObj<typeof Button>;
 
 export const ButtonStory: Story = {
     args: {
-        color: "dark",
-        isLoading: false,
-        children: "Click Me!",
+        isLoading: true,
     },
 };
-
 
 
 
