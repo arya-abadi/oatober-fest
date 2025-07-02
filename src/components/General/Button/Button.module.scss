@@ -18,6 +18,8 @@
   border: none;
   transition: all 0.2s;
   position: relative;
+  width: 100%;
+  max-width: 20rem;
 
   &::after {
     content: "";

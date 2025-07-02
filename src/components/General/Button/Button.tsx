@@ -1,7 +1,14 @@
+import React from "react";
 import { IButton } from "@/interfaces/IButton";
 import styles from "./Button.module.scss";
 
-const Button = ({ onClick, className, color, isLoading, children }: IButton) => {
+const Button: React.FC<IButton> = ({
+                                       onClick,
+                                       className = "",
+                                       color = "dark",
+                                       isLoading = false,
+                                       children = "Click Here",
+                                   }) => {
     const colorClass =
         color === "light" ? styles["button--light"] : styles["button--dark"];
     const loadingClass = isLoading ? styles["button--loading"] : "";
