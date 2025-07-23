@@ -1,15 +1,28 @@
-import { StoryblokStory } from "@/storyblok/storyblokSetup";
-import {fetchProductPage} from "@/utils/fetchProductPage";
+'use client';
 
-const ProductPage = async (props: any) => {
-    const params = await props.params;
-    const story = await fetchProductPage(params.slug);
+import { useQuery } from "@tanstack/react-query";
+import { Post } from "@/interfaces/IPost";
+import { fetchPostsAction } from "@/actions/postActions";
 
-    if (!story) {
-        return <div>Product not found</div>;
-    }
+const ProductPage = (props: any) => {
+    const { data, error, isLoading } = useQuery<Post[]>({
+        queryKey: ["posts"],
+        queryFn: fetchPostsAction,
+    });
 
-    return <StoryblokStory story={story} />;
-}
+    if (isLoading) return <p>LOADING...</p>;
+    if (error) return <p>Something went wrong.</p>;
+
+    return (
+        <>
+            {data?.map((post) => (
+                <div key={post.id}>
+                    <h1>{post.title}</h1>
+                    <p>{post.body}</p>
+                </div>
+            ))}
+        </>
+    );
+};
 
 export default ProductPage;
