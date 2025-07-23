@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Post } from "@/interfaces/IPost";
 import { fetchPostsAction } from "@/actions/postActions";
 
-const ProductPage = (props: any) => {
+const ProductPage = () => {
     const { data, error, isLoading } = useQuery<Post[]>({
         queryKey: ["posts"],
         queryFn: fetchPostsAction,
