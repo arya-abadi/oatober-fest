@@ -1,9 +1,3 @@
-@mixin heading-text-style($letterSpacing: 1.5) {
-  font-size: $font-size-2xl;
-  font-weight: 400;
-  letter-spacing: $letterSpacing;
-}
-
 .header {
   height: 95vh;
   position: relative;
@@ -46,24 +40,6 @@
       text-transform: uppercase;
 
       backface-visibility: hidden;
-
-      .headingPrimary {
-        @include heading-text-style(35px);
-
-        animation-name: moveInLeft;
-        animation-duration: 1s;
-        animation-timing-function: ease-out;
-        //animation-delay: 2s;
-        //animation-iteration-count: infinite;
-      }
-
-      .headingPrimarySub {
-        font-size: $font-size-lg;
-        font-weight: 700;
-        letter-spacing: 7.5px;
-
-        animation: moveInRight 1s ease-out;
-      }
     }
 
     .btnAnimation {

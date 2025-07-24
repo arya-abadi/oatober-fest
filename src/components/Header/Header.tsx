@@ -19,8 +19,8 @@ const Header = () => {
             </div>
             <div className={styles.headingBox}>
                 <h1 className={styles.textbox}>
-                    <span className={styles.headingPrimary}>OatMilk</span>
-                    <span className={styles.headingPrimarySub}>This is our new product</span>
+                    <span className="heading-primary">OatMilk</span>
+                    <span className="heading-primary-sub">This is our new product</span>
                 </h1>
                 <Button color="light" onClick={() => console.log('clicked')} className={styles.btnAnimation}>discover our plans</Button>
             </div>

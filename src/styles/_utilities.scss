@@ -1,0 +1,22 @@
+.u-center-text{
+  text-align: center;
+}
+
+.u-margin-bottom-small{
+  margin-bottom: 1rem;
+}
+.u-margin-bottom-medium{
+  margin-bottom: 3rem;
+}
+.u-margin-bottom-big{
+  margin-bottom: 5rem;
+}
+
+.grid-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-col-1-of-2{
+  grid-column: span 1 / span 1;
+}
